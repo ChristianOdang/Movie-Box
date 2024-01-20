@@ -26,4 +26,15 @@ const Moviecard = ({ movie }) => {
       );
     }
   };
+
+  return (
+    <div data-testid="movie-card"
+      className="font-bold w-full mx-auto max-w-[333px] flex flex-col space-y-2 sm:max-w-none">
+      <div className="relative">
+        {movie.poster_path} ? (
+        
+        )
+        </div>
+    </div>
+  )
 }
