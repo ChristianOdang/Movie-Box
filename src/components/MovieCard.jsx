@@ -64,6 +64,33 @@ const Moviecard = ({ movie }) => {
           USA, 2016 - current
         </div>
       </div>
+      <h3 onClick={fetch}
+        data-testid="movie-title"
+        className="text-lg text-darkestGray page-link">
+        {movie.title}
+      </h3>
+      <div className="flex justify-between font-normal">
+        <div className="flex items-center space-x-3 text-sm">
+          <div>
+            <img src={imdb} alt="IMDB logo" />
+          </div>
+          <span>860/100</span>
+        </div>
+        <div className="flex items-center space-x-3 text-sm">
+          <div>
+            <img src={tomato} alt="tomatoes" />
+          </div>
+          <span>97%</span>
+        </div>
+      </div>
+      <div className="text-xs text-darkerLightGray">
+        {movie.genre_ids.map((genre, index) => (
+          <span key={genre} className="mr-2 text-sm text-gray-600">
+            {getGenreName(genre)}
+            {index !== movie.genre_ids.length - 1 ? "," : ""}
+          </span>
+        ))}
+      </div>
     </div>
   );
 };
