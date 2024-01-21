@@ -1,5 +1,6 @@
 import Footer from "./components/Footer"
-import Moviecard from "./components/MovieCard"
+import SearchBar from "./components/SearchBar"
+
 
 
 
@@ -11,7 +12,8 @@ function App() {
       <h1 className="text-center text-4xl bg-slate-300 font-bold underline">
         Hello World
       </h1>
-      <Moviecard />
+      <SearchBar />
+      
       <Footer />
     </>
   )
