@@ -57,9 +57,44 @@ const MoviePage = () => {
             release_date={releaseDate}
           />
 
-          
+          <div className="lg:flex lg:flex-row text-[#666] space-y-16 lg:space-y-0 lg:gap-4">
+            <div className="lg:w-[60%] lg:flex lg:flex-col lg:justify-between">
+              <p data-testid="movie-overview">{movie.overview}</p>
+              <ul className="mt-5 space-y-2 lg:space-y-6">
+                <li>
+                  <span>Director: </span>
+                  <span className="text-rose">
+                    Joseph Kosinski
+                  </span>
+                </li>
+                <li>
+                  <span>Writers: </span>
+                  <span className="text-rose">
+                    Jim Cash, Jack Epps Jr, Peter Craig
+                  </span>
+                </li>
+                <li>
+                  <span>Stars: </span>
+                  <span className="text-rose">
+                    Tom Cruise, Jennifer Connelly, Miles Teller
+                  </span>
+                </li>
+              </ul>
+              <div className="flex flex-col mt-7 space-y-4 max-w-lg mx-auto lg:mx-0 lg:max-w-none lg:flex-row lg:border lg:border-lightGray lg:rounded-lg lg:space-y-0">
+                <button className="btn bg-rose text-white justify-center">
+                  Top rated movie #{movie.id}
+                </button>
+                <div className="flex items-center justify-between px-4 py-2 border border-lightGray rounded-lg hover:text-black transition-normal lg:border-none lg:flex-1">
+                  <span>Awards & Nominations</span>
+                  <IoIosArrowDown size={20} />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
   )
 }
+
+export default MoviePage;
