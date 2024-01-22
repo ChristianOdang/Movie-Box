@@ -1,22 +1,30 @@
-import Footer from "./components/Footer"
-import SearchBar from "./components/SearchBar"
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Loader from "./components/Loader";
+import { useLoading } from "./context/LoadingContext";
+import HomePage from "./pages/HomePage";
+import MoviePage from "./pages/MoviePage";
 
+let router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomePage />,
+  },
+  {
+    path: "/movies/:id",
+    element: <MoviePage />,
+  },
+]);
 
+const App = () => {
+  const isLoading = useLoading();
 
-
-function App() {
-
+  console.log(isLoading);
   return (
-    
     <>
-      <h1 className="text-center text-4xl bg-slate-300 font-bold underline">
-        Hello World
-      </h1>
-      <SearchBar />
-      
-      <Footer />
+      {isLoading && <Loader />}
+      <RouterProvider router={router} />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
